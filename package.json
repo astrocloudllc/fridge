@@ -1,0 +1,15 @@
+{
+  "name": "@astrocloudllc/fridge",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "license": "MIT",
+  "type": "module",
+  "peerDependencies": {
+    "@react-native-async-storage/async-storage": "^1.17.12"
+  },
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^11.0.0",
+    "rollup-plugin-dts": "^5.3.0"
+  }
+}
