@@ -5,6 +5,23 @@
   "types": "dist/index.d.ts",
   "license": "MIT",
   "type": "module",
+  "description": "A TypeScript wrapper around react-native-async-storage. This package provides full types for all of your data to make working with AsyncStorage simpler.",
+  "keywords": [
+    "react-native",
+    "react native",
+    "storage",
+    "async storage",
+    "asyncstorage",
+    "typescript"
+  ],
+  "homepage": "https://github.com/astrocloudllc/fridge",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/astrocloudllc/fridge"
+  },
+  "author": {
+    "name": "Aaron Ingalls"
+  },
   "files": [
     "dist",
     "README.md"
