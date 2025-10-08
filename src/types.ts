@@ -11,19 +11,19 @@ export type Key<T> = keyof T & string;
 
 export interface TypedStorage<T extends Record<string, any>> {
   /**
-   * Read an item from local storage
+   * Read an item from local storage, returning a
    *
    * @param {string} key The key where the data is stored
    * @returns Resolves object type `T` if found, throws `null` otherwise
    */
-  getItem: <K extends Key<T>>(key: K) => Promise<T[K]>;
+  getAsyncItem: <K extends Key<T>>(key: K) => Promise<T[K]>;
   /**
-   * Read an item, but returns `null` instead of throwing an error
+   * Read an item, but returns `undefined` instead of throwing an error
    *
    * @param key The key where the data is stored
-   * @returns Object type `T` if found, `null` otherwise
+   * @returns Object type `T` if found, `undefined` otherwise
    */
-  getNullableItem: <K extends Key<T>>(key: K) => Promise<T[K] | null>;
+  getItem: <K extends Key<T>>(key: K) => Promise<T[K] | undefined>;
   /**
    * Read an arbitray key for one-offs that aren't in the `StorageKeys` type. Behaves identically to `AsyncStorage.getItem()`
    *

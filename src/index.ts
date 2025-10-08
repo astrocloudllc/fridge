@@ -9,7 +9,7 @@ export const createStorage = <
   Keys extends Record<string, any>
 >(): TypedStorage<Keys> => {
   return {
-    getItem: async <T extends Key<Keys>>(key: T) => {
+    getAsyncItem: async <T extends Key<Keys>>(key: T) => {
       const data = await AsyncStorage.getItem(key);
       if (data === null) {
         throw null;
@@ -17,10 +17,10 @@ export const createStorage = <
         return JSON.parse(data) as Keys[T];
       }
     },
-    getNullableItem: async <T extends Key<Keys>>(key: T) => {
+    getItem: async <T extends Key<Keys>>(key: T) => {
       const data = await AsyncStorage.getItem(key);
       if (data === null) {
-        return null;
+        return undefined;
       } else {
         return JSON.parse(data) as Keys[T];
       }
